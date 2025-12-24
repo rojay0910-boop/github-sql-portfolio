@@ -1,6 +1,6 @@
 # GitHub SQL Portfolio: GitHub Activity Analysis
 
-## Project Overview 
+## Project Overview / プロジェクト概要
 This project uses the public **GitHub Activity (`github_repos`) dataset** in **Google BigQuery**
 to demonstrate practical SQL analytics skills.
 
@@ -8,14 +8,13 @@ The analysis focuses on exploring repository structures, file distributions,
 and development patterns using real-world, large-scale data.  
 
 **日本語**  
-## プロジェクト概要
 本プロジェクトでは、**Google BigQuery** の公開データセット**GitHub Activity（`github_repos`）** を使用し、  
 実務レベルの **SQL 分析スキル** を示すことを目的としています。
 大規模な実データを対象に、リポジトリ構造・ファイル分布・開発パターンを分析しました。
 
 ---
 
-## Objectives
+## Objectives / 目的
 The goals of this project are to:
 
 - Explore a large public dataset using SQL
