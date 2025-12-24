@@ -1,14 +1,15 @@
 # GitHub SQL Portfolio: GitHub Activity Analysis
-# GitHub SQL ポートフォリオ：GitHub Activity データ分析
 
-## Project Overview プロジェクト概要
+## Project Overview 
 This project uses the public **GitHub Activity (`github_repos`) dataset** in **Google BigQuery**
 to demonstrate practical SQL analytics skills.
-本プロジェクトでは、**Google BigQuery** の公開データセット**GitHub Activity（`github_repos`）** を使用し、  
-実務レベルの **SQL 分析スキル** を示すことを目的としています。
 
 The analysis focuses on exploring repository structures, file distributions,
 and development patterns using real-world, large-scale data.
+
+## プロジェクト概要
+本プロジェクトでは、**Google BigQuery** の公開データセット**GitHub Activity（`github_repos`）** を使用し、  
+実務レベルの **SQL 分析スキル** を示すことを目的としています。
 大規模な実データを対象に、リポジトリ構造・ファイル分布・開発パターンを分析しました。
 
 ---
@@ -24,7 +25,8 @@ The goals of this project are to:
   - Window Functions
   - Regular Expressions
 - Translate raw data into meaningful insights
-- 大規模な公開データを SQL で探索・分析する
+-
+-  大規模な公開データを SQL で探索・分析する
 - 実務で使用される分析クエリの練習
 - 以下の SQL スキルを実証する：
   - JOIN
@@ -42,6 +44,7 @@ The goals of this project are to:
   - `files`
   - `commits`
   - `languages` *(optional)*
+
 - **提供元**：Google BigQuery Public Datasets
 - **データセット**：`bigquery-public-data.github_repos`
 - **主に使用したテーブル**：
@@ -61,6 +64,7 @@ Key questions explored in this project include:
 - How are files structured within repositories?
 - Which repositories contain the largest number of files?
 - What programming languages dominate large repositories?
+
 - GitHub 上で最も多く使われているファイル拡張子は何か？
 - リポジトリ内のファイル構造にはどのような特徴があるか？
 - ファイル数が特に多いリポジトリはどれか？
@@ -77,6 +81,7 @@ This project demonstrates the following SQL techniques:
 - Window functions (`RANK`, `ROW_NUMBER`)
 - Regular expressions (`REGEXP_EXTRACT`, `REGEXP_CONTAINS`)
 - Common Table Expressions (CTEs)
+
 - `GROUP BY` と集計関数（`COUNT`, `SUM`）
 - `ORDER BY`, `LIMIT`
 - 複数テーブルの `JOIN`
