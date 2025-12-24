@@ -86,8 +86,8 @@ This project demonstrates the following SQL techniques:
 - `JOIN` between multiple tables
 - Window functions (`RANK`, `ROW_NUMBER`)
 - Regular expressions (`REGEXP_EXTRACT`, `REGEXP_CONTAINS`)
-- Common Table Expressions (CTEs)
-- 
+- Common Table Expressions (CTEs)  
+ 
 **日本語**  
 - `GROUP BY` と集計関数（`COUNT`, `SUM`）
 - `ORDER BY`, `LIMIT`
