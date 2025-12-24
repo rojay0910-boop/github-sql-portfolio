@@ -70,6 +70,7 @@ Key questions explored in this project include:
 - What programming languages dominate large repositories?
    
 **日本語**  
+本プロジェクトでは、以下のような問いを分析しました。
 - GitHub 上で最も多く使われているファイル拡張子は何か？
 - リポジトリ内のファイル構造にはどのような特徴があるか？
 - ファイル数が特に多いリポジトリはどれか？
