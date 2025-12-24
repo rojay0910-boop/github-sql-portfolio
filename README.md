@@ -5,7 +5,7 @@ This project uses the public **GitHub Activity (`github_repos`) dataset** in **G
 to demonstrate practical SQL analytics skills.
 
 The analysis focuses on exploring repository structures, file distributions,
-and development patterns using real-world, large-scale data.
+and development patterns using real-world, large-scale data.  
 **日本語**
 ## プロジェクト概要
 本プロジェクトでは、**Google BigQuery** の公開データセット**GitHub Activity（`github_repos`）** を使用し、  
@@ -24,7 +24,7 @@ The goals of this project are to:
   - Aggregations
   - Window Functions
   - Regular Expressions
-- Translate raw data into meaningful insights
+- Translate raw data into meaningful insights  
 **日本語**
 本プロジェクトの目的は以下の通りです。
 -  大規模な公開データを SQL で探索・分析する
@@ -47,7 +47,7 @@ The goals of this project are to:
   - `languages` *(optional)*
 
 > Note: This dataset contains metadata from millions of public GitHub repositories
-and is queried directly in BigQuery (no local download required).
+and is queried directly in BigQuery (no local download required).  
 **日本語**
 - **提供元**：Google BigQuery Public Datasets
 - **データセット**：`bigquery-public-data.github_repos`
@@ -65,7 +65,7 @@ Key questions explored in this project include:
 - What file types appear most frequently across GitHub repositories?
 - How are files structured within repositories?
 - Which repositories contain the largest number of files?
-- What programming languages dominate large repositories?
+- What programming languages dominate large repositories?  
 **日本語**
 - GitHub 上で最も多く使われているファイル拡張子は何か？
 - リポジトリ内のファイル構造にはどのような特徴があるか？
@@ -82,7 +82,7 @@ This project demonstrates the following SQL techniques:
 - `JOIN` between multiple tables
 - Window functions (`RANK`, `ROW_NUMBER`)
 - Regular expressions (`REGEXP_EXTRACT`, `REGEXP_CONTAINS`)
-- Common Table Expressions (CTEs)
+- Common Table Expressions (CTEs)  
 **日本語**
 - `GROUP BY` と集計関数（`COUNT`, `SUM`）
 - `ORDER BY`, `LIMIT`
