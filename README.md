@@ -6,7 +6,7 @@ to demonstrate practical SQL analytics skills.
 
 The analysis focuses on exploring repository structures, file distributions,
 and development patterns using real-world, large-scale data.
-### 日本語
+**日本語**
 ## プロジェクト概要
 本プロジェクトでは、**Google BigQuery** の公開データセット**GitHub Activity（`github_repos`）** を使用し、  
 実務レベルの **SQL 分析スキル** を示すことを目的としています。
@@ -25,7 +25,7 @@ The goals of this project are to:
   - Window Functions
   - Regular Expressions
 - Translate raw data into meaningful insights
-### 日本語
+**日本語**
 本プロジェクトの目的は以下の通りです。
 -  大規模な公開データを SQL で探索・分析する
 - 実務で使用される分析クエリの練習
@@ -48,7 +48,7 @@ The goals of this project are to:
 
 > Note: This dataset contains metadata from millions of public GitHub repositories
 and is queried directly in BigQuery (no local download required).
-### 日本語
+**日本語**
 - **提供元**：Google BigQuery Public Datasets
 - **データセット**：`bigquery-public-data.github_repos`
 - **主に使用したテーブル**：
@@ -66,7 +66,7 @@ Key questions explored in this project include:
 - How are files structured within repositories?
 - Which repositories contain the largest number of files?
 - What programming languages dominate large repositories?
-### 日本語
+**日本語**
 - GitHub 上で最も多く使われているファイル拡張子は何か？
 - リポジトリ内のファイル構造にはどのような特徴があるか？
 - ファイル数が特に多いリポジトリはどれか？
@@ -83,7 +83,7 @@ This project demonstrates the following SQL techniques:
 - Window functions (`RANK`, `ROW_NUMBER`)
 - Regular expressions (`REGEXP_EXTRACT`, `REGEXP_CONTAINS`)
 - Common Table Expressions (CTEs)
-### 日本語
+**日本語**
 - `GROUP BY` と集計関数（`COUNT`, `SUM`）
 - `ORDER BY`, `LIMIT`
 - 複数テーブルの `JOIN`
