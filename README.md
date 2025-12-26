@@ -56,8 +56,8 @@ and is queried directly in BigQuery (no local download required).
 - **主に使用したテーブル**：
   - `files`
   - `commits`
-  - `languages`（必要に応じて）
-※ 本データセットは数百万件の公開 GitHub リポジトリのメタデータを含み、BigQuery 上で直接クエリ可能です
+  - `languages`（必要に応じて）  
+> 本データセットは数百万件の公開 GitHub リポジトリのメタデータを含み、BigQuery 上で直接クエリ可能です
 （ローカルへのダウンロードは不要）。
 ---
 
