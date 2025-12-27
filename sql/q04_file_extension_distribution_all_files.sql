@@ -1,6 +1,5 @@
 -- q04_file_extension_distribution
--- Goal: Count files by extension (simple version).
--- (using the low-cost sample table)
+-- Goal: Count files by extension(using the low-cost sample table)
 
 SELECT
   LOWER(REGEXP_EXTRACT(path, r'\.([^.\/]+)$')) AS extension,
