@@ -2,7 +2,7 @@
 -- Goal: Analyze file extension distribution ONLY within the top N repos (by file count)
 -- Uses the smaller sample table to keep costs low.
 
--- 1) 先找出檔案數最多的 Top repos
+-- 1) the top N repos
 WITH top_repos AS (
   SELECT
     repo_name,
@@ -13,7 +13,7 @@ WITH top_repos AS (
   LIMIT 100
 ),
 
--- 2) 只取這些 Top repos 的檔案
+-- 2) only within Top repos
 top_repo_files AS (
   SELECT
     f.path
@@ -22,12 +22,12 @@ top_repo_files AS (
   USING (repo_name)
 )
 
--- 3) 在 Top repos 裡統計副檔名
+-- 3) count numbers of file extension distribution ONLY within the top N repos
 SELECT
   LOWER(REGEXP_EXTRACT(path, r'\.([^.\/]+)$')) AS ext,
   COUNT(*) AS file_count
 FROM top_repo_files
-WHERE REGEXP_CONTAINS(path, r'\.[^/]+$')
+WHERE REGEXP_CONTAINS(path, r'\.[^/]+$') -- keep only paths that end with a file extension
 GROUP BY ext
 ORDER BY file_count DESC
 LIMIT 50;
