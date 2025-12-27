@@ -1,4 +1,3 @@
-sql/q02_preview_files.sql
 -- q02_preview_files
 -- Goal: Preview sample rows from files table.
 
