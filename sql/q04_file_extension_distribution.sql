@@ -4,8 +4,8 @@
 SELECT
   REGEXP_EXTRACT(path, r'\.([^.\/]+)$') AS extension,
   COUNT(*) AS file_count
-FROM `bigquery-public-data.github_repos.files`
-WHERE REGEXP_CONTAINS(path, r'\.[^/]+$')  -- keep file-like paths only
+FROM `bigquery-public-data.github_repos.sample_files`
+WHERE REGEXP_CONTAINS(path, r'\.[^/]+$')
 GROUP BY extension
 ORDER BY file_count DESC
-LIMIT 100;
+LIMIT 50;
