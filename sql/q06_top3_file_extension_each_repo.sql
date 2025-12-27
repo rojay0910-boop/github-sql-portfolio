@@ -1,4 +1,4 @@
--- Top 3 file extensions for each repo (using the low-cost sample table)
+-- Goal:Top 3 file extensions for each repo (using the low-cost sample table)
 
 WITH ext_counts AS (
   SELECT

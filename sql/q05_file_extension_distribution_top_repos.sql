@@ -1,4 +1,3 @@
--- q05_top_repos_file_extension_distribution
 -- Goal: Analyze file extension distribution ONLY within the top N repos (by file count)
 -- Uses the smaller sample table to keep costs low.
 
