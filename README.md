@@ -114,5 +114,5 @@ LIMIT 10;
 
 This visualization analyzes the file composition of the top ten GitHub repositories by file count.
 
-![Top 3 File Extensions in the Top 10 GitHub Repositories](assets/ images/top10_repos_extensions.png)
+![Top 3 File Extensions in the Top 10 GitHub Repositories](assets/images/top10_repos_extensions.png)
 
