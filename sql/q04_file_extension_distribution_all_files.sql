@@ -3,9 +3,9 @@
 
 SELECT
   LOWER(REGEXP_EXTRACT(path, r'\.([^.\/]+)$')) AS extension,
-  COUNT(*) AS file_count
+  COUNT(*) AS total_files
 FROM `bigquery-public-data.github_repos.sample_files`
 WHERE REGEXP_CONTAINS(path, r'\.[^/]+$')
 GROUP BY extension
-ORDER BY file_count DESC
+ORDER BY total_files DESC
 LIMIT 50;
