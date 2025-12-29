@@ -22,9 +22,9 @@ top_repo_files AS (
 -- 3) count numbers of file extension distribution ONLY within the top N repos
 SELECT
   LOWER(REGEXP_EXTRACT(path, r'\.([^.\/]+)$')) AS ext,
-  COUNT(*) AS total_files
+  COUNT(*) AS file_count
 FROM top_repo_files
 WHERE REGEXP_CONTAINS(path, r'\.[^/]+$') -- keep only paths that end with a file extension
 GROUP BY ext
-ORDER BY total_files DESC
+ORDER BY file_count DESC
 LIMIT 50;
