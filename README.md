@@ -58,32 +58,48 @@ and is queried directly in BigQuery (no local download required).
 （ローカルへのダウンロードは不要）。
 ---
 
-## Analysis Tasks / 分析内容
-Key questions explored in this project include:
+## Analysis Tasks / 分析內容
 
-- What file types appear most frequently across GitHub repositories?
-- How are files structured within repositories?
-- Which repositories contain the largest number of files?
-- What programming languages dominate large repositories?
-   
-本プロジェクトでは、以下のような問いを分析しました。
-- GitHub 上で最も多く使われているファイル拡張子は何か？
-- リポジトリ内のファイル構造にはどのような特徴があるか？
-- ファイル数が特に多いリポジトリはどれか？
-- 大規模リポジトリで使用されている言語の傾向は？
+This project investigates the following questions:
+
+- What file types are most common in large GitHub repositories?
+- How does file composition vary across repositories?
+- Which repositories contain the largest number of files, and what are they primarily composed of?
+- What technologies and content types dominate large-scale open-source projects?  
+
+本プロジェクトでは、以下の観点から分析を行いました。
+
+- 大規模な GitHub リポジトリでは、どのようなファイル拡張子が多く使われているか
+- リポジトリごとのファイル構成にはどのような違いがあるか
+- ファイル数が特に多いリポジトリは、どのような構成を持っているか
+- 大規模オープンソースプロジェクトで主に使用されている技術・コンテンツの傾向
 
 ---
+## Analysis Results
+In this project, **large GitHub repositories** are defined as repositories with a high number of files.
+Specifically, they refer to the **top 10 repositories ranked by total file count** in the dataset.
+This definition focuses on repository size in terms of codebase and file structure, rather than popularity metrics such as stars or forks.  
 
-## Key Visualization / 主な可視化結果
+本プロジェクトにおける **large GitHub repositories** とは、
+データセット内で **ファイル数が多いリポジトリ**を指します。
+具体的には、**ファイル数で順位付けした上位10件のリポジトリ**を対象としています。
+本分析では、スター数やフォーク数などの人気指標ではなく、
+コードベースおよびファイル構造の規模に着目しています。
 
-### Top 3 File Extensions in the Top 10 GitHub Repositories
+### Analysis 1: Top 3 File Extensions in the Top 10 GitHub Repositories(large GitHub repositories)
 
 This visualization analyzes the file composition of the top ten GitHub repositories by file count.  
-For each repository, it displays the three most common file extensions, providing insight into the primary technologies and content types used in these projects.  
+For each repository, it displays the three most common file extensions, providing insight into the primary technologies and content types used in these projects.    
+
 この可視化は、ファイル数に基づいて上位10件のGitHubリポジトリのファイル構成を分析したものです。  
 各リポジトリについて、最も一般的なファイル拡張子を上位3つ表示し、主に使用されている技術やコンテンツの種類を示しています。
 
 ![Top 3 File Extensions in the Top 10 GitHub Repositories](assets/images/top10_repos_extensions.png)
+
+**Key Findings**
+- Large repositories are often dominated by a small number of file types.
+- Repositories such as cdnjs/cdnjs are heavily composed of JavaScript and image files.
+- Some large repositories consist primarily of documentation or static assets rather than source code.
 
 ---
 ## SQL Techniques Demonstrated / 使用した SQL 技術
@@ -112,11 +128,7 @@ This project demonstrates the following SQL techniques:
 SELECT
   REGEXP_EXTRACT(path, r'\.([^.]+)$') AS extension,
   COUNT(*) AS file_count
-FROM `bigquery-public-data.github_repos.files`
+FROM `bigquery-public-data.github_repos.sample_files`
 GROUP BY extension
 ORDER BY file_count DESC
 LIMIT 10;
-
-
-
-
