@@ -5,13 +5,12 @@
 WITH top_repos AS (
   SELECT
     repo_name,
-    COUNT(*) AS file_count
+    COUNT(*) AS total_files
   FROM `bigquery-public-data.github_repos.sample_files`
   GROUP BY repo_name
-  ORDER BY file_count DESC
+  ORDER BY total_files DESC
   LIMIT 100
 ),
-
 -- 2) only within Top repos
 top_repo_files AS (
   SELECT
@@ -20,13 +19,12 @@ top_repo_files AS (
   JOIN top_repos AS r
   USING (repo_name)
 )
-
 -- 3) count numbers of file extension distribution ONLY within the top N repos
 SELECT
   LOWER(REGEXP_EXTRACT(path, r'\.([^.\/]+)$')) AS ext,
-  COUNT(*) AS file_count
+  COUNT(*) AS total_files
 FROM top_repo_files
 WHERE REGEXP_CONTAINS(path, r'\.[^/]+$') -- keep only paths that end with a file extension
 GROUP BY ext
-ORDER BY file_count DESC
+ORDER BY total_files DESC
 LIMIT 50;
