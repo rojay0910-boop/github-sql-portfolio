@@ -105,20 +105,12 @@ For each repository, it displays the three most common file extensions, providin
 ## SQL Techniques Demonstrated / 使用した SQL 技術
 
 This project demonstrates the following SQL techniques:
-- `GROUP BY` with aggregation (`COUNT`, `SUM`)
+- `GROUP BY` with aggregation (`COUNT`)
 - `ORDER BY` and `LIMIT`
 - `JOIN` between multiple tables
 - Window functions (`RANK`, `ROW_NUMBER`)
 - Regular expressions (`REGEXP_EXTRACT`, `REGEXP_CONTAINS`)
 - Common Table Expressions (CTEs)  
- 
-- `GROUP BY` と集計関数（`COUNT`, `SUM`）
-- `ORDER BY`, `LIMIT`
-- 複数テーブルの `JOIN`
-- Window Function（`RANK`, `ROW_NUMBER`）
-- 正規表現（`REGEXP_EXTRACT`, `REGEXP_CONTAINS`）
-- 共通テーブル式（CTE / `WITH`）
-
 ---
 
 ## Example Queries / クエリ例
