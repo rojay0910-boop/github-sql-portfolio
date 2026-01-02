@@ -1,0 +1,94 @@
+-- Mirror-ready output:
+-- - same extension list for both groups
+-- - standardized within each group (pct_in_group)
+-- - mirror_value: Large negative, Smaller positive
+
+DECLARE top_n INT64 DEFAULT 20;
+
+WITH repo_sizes AS (
+  SELECT repo_name, COUNT(*) AS total_files
+  FROM `bigquery-public-data.github_repos.sample_files`
+  GROUP BY repo_name),
+top10_repos AS (
+  SELECT repo_name
+  FROM repo_sizes
+  ORDER BY total_files DESC
+  LIMIT 10),
+files_labeled AS (
+  SELECT
+    f.repo_name,
+    CASE
+      WHEN t.repo_name IS NOT NULL THEN 'Large (Top 10 by file count)'
+      ELSE 'Smaller (All others)'
+    END AS repo_group,
+    LOWER(REGEXP_EXTRACT(f.path, r'\.([^.\/]+)$')) AS ext
+  FROM `bigquery-public-data.github_repos.sample_files` AS f
+  LEFT JOIN top10_repos AS t
+    ON f.repo_name = t.repo_name
+  WHERE REGEXP_CONTAINS(f.path, r'\.[^/]+$')),
+
+-- count files by group + ext
+ext_counts AS (
+  SELECT
+    repo_group,
+    ext,
+    COUNT(*) AS file_count
+  FROM files_labeled
+  GROUP BY repo_group, ext),
+
+-- totals for percent-within-group
+with_totals AS (
+  SELECT
+    repo_group,
+    ext,
+    file_count,
+    SUM(file_count) OVER (PARTITION BY repo_group) AS group_total,
+    SAFE_DIVIDE(file_count, SUM(file_count) OVER (PARTITION BY repo_group)) AS pct_in_group
+  FROM ext_counts),
+
+-- choose a single extension list for comparison (union-topN):
+-- rank by combined pct (Large + Smaller) so we keep the most "important" extensions overall
+union_rank AS (
+  SELECT
+    ext,
+    SUM(pct_in_group) AS combined_pct,
+    ROW_NUMBER() OVER (ORDER BY SUM(pct_in_group) DESC, ext) AS rn
+  FROM with_totals
+  GROUP BY ext),
+
+top_ext AS (
+  SELECT ext
+  FROM union_rank
+  WHERE rn <= top_n),
+
+-- ensure both groups have every ext (missing -> 0)
+grid AS (
+  SELECT g.repo_group, e.ext
+  FROM (SELECT 'Large (Top 10 by file count)' AS repo_group
+        UNION ALL
+        SELECT 'Smaller (All others)') AS g
+  CROSS JOIN top_ext AS e),
+
+final AS (
+  SELECT
+    grid.repo_group,
+    grid.ext,
+    COALESCE(w.file_count, 0) AS file_count,
+    COALESCE(w.pct_in_group, 0) AS pct_in_group,
+    CASE
+      WHEN grid.repo_group = 'Large (Top 10 by file count)' THEN -COALESCE(w.pct_in_group, 0)
+      ELSE  COALESCE(w.pct_in_group, 0)
+    END AS mirror_value
+  FROM grid
+  LEFT JOIN with_totals AS w
+    ON w.repo_group = grid.repo_group
+   AND w.ext = grid.ext)
+
+SELECT
+  repo_group,
+  ext,
+  file_count,
+  pct_in_group,
+  mirror_value
+FROM final
+ORDER BY ext, repo_group;
