@@ -87,24 +87,24 @@ This definition focuses on repository size in terms of codebase and file structu
 ---
 ## Analysis Results
 
-
 ### Analysis 1: Top File Extensions in Large Repositories
 Related Research Questions:
-•	What file types are most frequently used in large GitHub repositories defined by file count?
-•	Do GitHub repositories with the largest file counts share similar file-composition patterns, or do notable structural outliers exist?
+- What file types are most frequently used in large GitHub repositories defined by file count?
+- Do GitHub repositories with the largest file counts share similar file-composition patterns, or do notable structural outliers exist?
 Explanation:
 This analysis examines the top 10 GitHub repositories ranked by file count and analyzes the distribution of their major file extensions. By restricting the scope to large repositories, the analysis aims to directly identify the file-type characteristics that are most commonly used in large-scale projects.
 The results show that JavaScript-related extensions, such as .js and .css, account for a high proportion of files in these repositories. This suggests that many large repositories are structured primarily around web-oriented resources.
 In addition, by incorporating a repository-level comparison among the largest repositories, this analysis provides insights into the commonalities and differences in file-composition patterns, highlighting whether large repositories exhibit similar structures or include notable structural outliers.
+![Top 3 File Extensions in the Top 10 GitHub Repositories](assets/images/top10_repos_extensions.png)
 
 ### Analysis 2: File Composition Differences Between Large and Small Repositories
-
-This visualization analyzes the file composition of the top ten GitHub repositories by file count.  
-For each repository, it displays the three most common file extensions, providing insight into the primary technologies and content types used in these projects.    
-
-### Analysis 3: Primary File Types Across GitHub Repositories
-
-
+Related Research Questions:
+- How does file composition vary across repositories?
+- What do file-type distributions reveal about the technologies and purposes of large GitHub repositories?
+Explanation:  
+This analysis compares the distribution of file extensions between large repositories (top 10 by file count) and smaller repositories (all remaining projects). By grouping repositories according to size and examining their file compositions side by side, the analysis highlights structural differences associated with repository scale.
+The results indicate that large repositories tend to concentrate on a small number of file types, with JavaScript- and CSS-related files accounting for a high proportion of their contents. In contrast, smaller repositories generally exhibit a more diverse distribution of file extensions.
+This contrast suggests that large GitHub repositories are often organized around specific technologies and content types, particularly those related to web development and web-oriented resource libraries.
 
 分析①：大規模リポジトリにおける主要なファイル拡張子  
 対応する研究課題：
@@ -116,6 +116,20 @@ For each repository, it displays the three most common file extensions, providin
 分析の結果、.js や .css に代表される JavaScript 関連の拡張子が高い割合を占めていることが確認された。このことから、多くの大規模リポジトリは、Web 指向のリソースを中心とした構成を持つことが示された。
 さらに、本分析にはファイル数上位のリポジトリを個別に比較する視点も含まれており、最大規模のリポジトリ間におけるファイル構成の共通性および差異についても示唆を与えている。
 
+分析②：大規模リポジトリと小規模リポジトリにおけるファイル構成の違い  
+対応する研究課題：  
+- リポジトリ間でファイル構成はどのように異なるのか。
+- ファイルタイプの分布から、大規模な GitHub リポジトリの技術的特徴や目的はどのように読み取れるのか。
+
+説明：
+本分析では、**大規模リポジトリ（ファイル数上位 10 件）と小規模リポジトリ（それ以外のすべてのプロジェクト）**の間で、ファイル拡張子の分布を比較した。リポジトリを規模別に分類し、それぞれのファイル構成を並列に検討することで、リポジトリ規模に伴う構造的な違いを明らかにしている。
+
+分析の結果、大規模リポジトリでは 少数のファイルタイプに構成が集中する傾向が見られ、特に JavaScript や CSS 関連のファイルが高い割合を占めていることが確認された。一方で、小規模リポジトリでは より多様な拡張子分布が観察された。
+この対比から、大規模な GitHub リポジトリは、Web 開発や Web 指向のリソースライブラリに関連する特定の技術やコンテンツタイプを中心に構成されていることが示唆される。
+
+
+
+
 This visualization analyzes the file composition of the top ten GitHub repositories by file count.  
 For each repository, it displays the three most common file extensions, providing insight into the primary technologies and content types used in these projects.    
 
@@ -125,7 +139,7 @@ The results show that large repositories are dominated by a small number of file
 この可視化は、ファイル数に基づいて上位10件のGitHubリポジトリのファイル構成を分析したものです。  
 各リポジトリについて、最も一般的なファイル拡張子を上位3つ表示し、主に使用されている技術やコンテンツの種類を示しています。
 
-![Top 3 File Extensions in the Top 10 GitHub Repositories](assets/images/top10_repos_extensions.png)
+
 
 **Key Findings**
 - Large repositories are often dominated by a small number of file types.
