@@ -90,12 +90,17 @@ This definition focuses on repository size in terms of codebase and file structu
 ### Analysis 1: Top File Extensions in Large Repositories
 Related Research Questions:
 - What file types are most frequently used in large GitHub repositories defined by file count?
-- Do GitHub repositories with the largest file counts share similar file-composition patterns, or do notable structural outliers exist?
+- Do GitHub repositories with the largest file counts share similar file-composition patterns, or do notable structural outliers exist?  
 Explanation:
 This analysis examines the top 10 GitHub repositories ranked by file count and analyzes the distribution of their major file extensions. By restricting the scope to large repositories, the analysis aims to directly identify the file-type characteristics that are most commonly used in large-scale projects.
 The results show that JavaScript-related extensions, such as .js and .css, account for a high proportion of files in these repositories. This suggests that many large repositories are structured primarily around web-oriented resources.
 In addition, by incorporating a repository-level comparison among the largest repositories, this analysis provides insights into the commonalities and differences in file-composition patterns, highlighting whether large repositories exhibit similar structures or include notable structural outliers.
 ![Top 3 File Extensions in the Top 10 GitHub Repositories](assets/images/top10_repos_extensions.png)
+
+Building on the results of figure, which show that JavaScript-related file types are most frequently used across many large repositories, the repository-level breakdown reveals that large GitHub repositories can be broadly classified into several structural categories based on their file composition.
+Asset-oriented repositories, such as CDN-related projects, are characterized by extremely high counts of .js, .css, and image files, reflecting their role as large-scale web resource libraries. Platform-level projects, including Chromium-related repositories, exhibit a more diverse mix of file types—such as .html, .png, and .txt—which correspond to testing assets, documentation, and user interface resources alongside source code.
+In contrast, RMerl/asuswrt-merlin represents a clear outlier within the set of large repositories. Its file composition is dominated by C source and header files, reflecting its nature as a firmware-oriented, embedded systems project rather than a web- or asset-focused repository.
+Taken together, this classification clarifies that while large repositories often share high file counts, their internal structures differ substantially depending on project purpose, and file count alone does not imply a uniform type of software project.
 
 ### Analysis 2: File Composition Differences Between Large and Small Repositories
 Related Research Questions:
@@ -106,7 +111,7 @@ This analysis compares the distribution of file extensions between large reposit
 The results indicate that large repositories tend to concentrate on a small number of file types, with JavaScript- and CSS-related files accounting for a high proportion of their contents. In contrast, smaller repositories generally exhibit a more diverse distribution of file extensions.
 This contrast suggests that large GitHub repositories are often organized around specific technologies and content types, particularly those related to web development and web-oriented resource libraries.
 
-分析①：大規模リポジトリにおける主要なファイル拡張子  
+### 分析①：大規模リポジトリにおける主要なファイル拡張子  
 対応する研究課題：
 - ファイル数によって定義された大規模な GitHub リポジトリでは、どのようなファイルタイプが多く使われているのか。
 - ファイル数が最も多い GitHub リポジトリは、類似したファイル構成パターンを共有しているのか。それとも、顕著な構成上の例外（アウトライア）は存在するのか。
@@ -115,6 +120,11 @@ This contrast suggests that large GitHub repositories are often organized around
 本分析では、ファイル数に基づいて上位 10 件に分類される GitHub リポジトリを対象とし、それらに含まれる主要なファイル拡張子の分布を分析した。分析対象を大規模リポジトリに限定することで、大規模プロジェクトにおいて多く利用されているファイルタイプの特徴を直接的に明らかにすることを目的としている。
 分析の結果、.js や .css に代表される JavaScript 関連の拡張子が高い割合を占めていることが確認された。このことから、多くの大規模リポジトリは、Web 指向のリソースを中心とした構成を持つことが示された。
 さらに、本分析にはファイル数上位のリポジトリを個別に比較する視点も含まれており、最大規模のリポジトリ間におけるファイル構成の共通性および差異についても示唆を与えている。
+
+図の結果から、多くの大規模リポジトリでは JavaScript 関連のファイルタイプが頻繁に用いられていることが確認された。これを踏まえてリポジトリ単位で検討すると、大規模な GitHub リポジトリは、そのファイル構成に基づいていくつかの構造的タイプに分類できる。
+CDN 関連に代表されるリソース指向のリポジトリは、.js、.css、画像ファイルが極めて多く、Web リソースライブラリとしての役割を反映している。一方、Chromium 関連のプラットフォームレベルのプロジェクトでは、.html、.png、.txt などのファイルが多く見られ、これらはテスト、ドキュメント、ユーザーインターフェース資源として、ソースコードと併せて使用されている。
+これに対し、RMerl/asuswrt-merlin は大規模リポジトリ群の中でも明確なアウトライアであり、そのファイル構成は主として C 言語のソースコードおよびヘッダファイルから成っている。この点は、本プロジェクトが Web やリソース配布を目的とするものではなく、ファームウェアおよび組込みシステム指向のプロジェクトであることを示している。
+以上より、大規模リポジトリはファイル数という点では共通しているものの、その内部構造はプロジェクトの目的に応じて大きく異なり、ファイル数のみから一様なソフトウェア特性を推定することはできないことが明らかとなった。　　
 
 分析②：大規模リポジトリと小規模リポジトリにおけるファイル構成の違い  
 対応する研究課題：  
