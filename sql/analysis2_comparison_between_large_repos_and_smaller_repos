@@ -76,7 +76,7 @@ final AS (
     COALESCE(w.file_count, 0) AS file_count,
     COALESCE(w.pct_in_group, 0) AS pct_in_group,
     CASE
-      WHEN grid.repo_group = 'Large (Top 10 by file count)' THEN -COALESCE(w.pct_in_group, 0)
+      WHEN grid.repo_group = 'Smaller (All others)' THEN -COALESCE(w.pct_in_group, 0)
       ELSE  COALESCE(w.pct_in_group, 0)
     END AS mirror_value
   FROM grid
