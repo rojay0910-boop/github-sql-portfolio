@@ -3,7 +3,7 @@
 ### Analysis 1: Top File Extensions in Large Repositories
 This analysis examines the top 10 GitHub repositories ranked by file count and analyzes the distribution of their major file extensions. By restricting the scope to large repositories, the analysis aims to directly identify the file-type characteristics that are most commonly used in large-scale projects.
 The results show that JavaScript-related extensions, such as .js and .css, account for a high proportion of files in these repositories. This suggests that many large repositories are structured primarily around web-oriented resources.
-In addition, by incorporating a repository-level comparison among the largest repositories, this analysis provides insights into the commonalities and differences in file-composition patterns, highlighting whether large repositories exhibit similar structures or include notable structural outliers.
+In addition, by incorporating a repository-level comparison among the largest repositories, this analysis provides insights into the commonalities and differences in file-composition patterns, highlighting whether large repositories exhibit similar structures or include notable structural outliers.  
 ![Top File Extensions in Large Repositories](assets/images/top10_repos_extensions.png)
 
 Building on the results of figure, which show that JavaScript-related file types are most frequently used across many large repositories, the repository-level breakdown reveals that large GitHub repositories can be broadly classified into several structural categories based on their file composition.
@@ -14,7 +14,7 @@ Taken together, this classification clarifies that while large repositories ofte
 ### Analysis 2: File Composition Differences Between Large and Small Repositories
 This analysis compares the distribution of file extensions between large repositories (top 10 by file count) and smaller repositories (all remaining projects). By grouping repositories according to size and examining their file compositions side by side, the analysis highlights structural differences associated with repository scale.
 The results indicate that large repositories tend to concentrate on a small number of file types, with JavaScript- and CSS-related files accounting for a high proportion of their contents. In contrast, smaller repositories generally exhibit a more diverse distribution of file extensions.
-This contrast suggests that large GitHub repositories are often organized around specific technologies and content types, particularly those related to web development and web-oriented resource libraries.
+This contrast suggests that large GitHub repositories are often organized around specific technologies and content types, particularly those related to web development and web-oriented resource libraries.  
 ![File Composition Differences Between Large and Small Repositories](assets/images/comparison_between_large_and_other_repos.png)
 
 Figure 2 presents a mirrored comparison of file-type distributions between large repositories (top 10 by file count) and smaller repositories (all remaining projects), with values normalized as percentages within each group. The mirrored layout allows for direct visual comparison of relative file composition across repository sizes.
