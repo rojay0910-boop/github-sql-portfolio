@@ -91,8 +91,10 @@ This definition focuses on repository size in terms of codebase and file structu
 ## Analysis Results
 
 The analysis reveals that large GitHub repositories tend to concentrate on a limited number of file types, particularly JavaScript-, CSS-, and image-related files, reflecting roles such as web resource distribution, platform maintenance, or large-scale asset management. In contrast, smaller repositories exhibit more diverse file compositions, often corresponding to self-contained development projects. While many large repositories share similar structural patterns, notable outliers—such as firmware-oriented projects—demonstrate that repository size alone does not imply a uniform software structure.  
-[View Analysis Results](analysis.md)   
-(SQL queries used in this analysis are organized in the sql/ directory, while visualization outputs are stored in assets/.)
+![Top File Extensions in Large Repositories](assets/images/top10_repos_extensions.png)
+  
+(SQL queries used in this analysis are organized in the sql/ directory, while visualization outputs are stored in assets/.)  
+[View Analysis Results Detail](analysis.md) 
 
 ---
 ## SQL Techniques Demonstrated / 使用した SQL 技術
